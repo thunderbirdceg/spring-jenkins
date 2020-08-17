@@ -1,8 +1,14 @@
 pipeline{
+  environment{
+    registry= "trailfire/dockertest"
+      registryCredentials='dockerhubgokul'
+    
+  }
   tools{
    maven 'Maven' 
     
   }
+  
 agent any
 stages{
 stage('Build'){
@@ -12,7 +18,12 @@ echo'Hi'
     echo "${env.BUILD_ID}"
   }
 }
-
+  stage('Docker'){
+    steps{
+      docker.build registry + "spring" + "$BUILD_NUMBER" 
+    }
+    
+  }
 
 
 
