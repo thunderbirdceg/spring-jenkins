@@ -28,7 +28,7 @@ echo'Hi'
     steps{
       script
       {
-      docker.build registry + "spring" + "$BUILD_NUMBER" 
+     dockerImage = docker.build registry + "spring" + "$BUILD_NUMBER" 
       }
     }
     
