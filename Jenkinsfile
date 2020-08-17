@@ -34,7 +34,7 @@ echo'Hi'
   
   stage('Deploy Image') {
   steps{    script {
-      docker.withRegistry( '', registryCredential ) {
+      docker.withRegistry( '', registryCredentials ) {
         dockerImage.push()
       }
     }
