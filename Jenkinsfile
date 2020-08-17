@@ -6,7 +6,7 @@ pipeline{
   agent any
   
   environment{
-    registry= "trailfire/dockertest"
+    registry= "trailfire/jenkinstest"
       registryCredentials='dockerhubgokul'
     
   }
@@ -28,7 +28,7 @@ echo'Hi'
     steps{
       script
       {
-     dockerImage = docker.build registry + "spring" + "$BUILD_NUMBER" 
+     dockerImage = docker.build registry +  ":$BUILD_NUMBER" 
       }
     }
     
