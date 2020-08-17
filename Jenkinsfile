@@ -1,5 +1,5 @@
 pipeline{
-  agent 'docker-agent'
+  
   environment{
     registry= "trailfire/dockertest"
       registryCredentials='dockerhubgokul'
