@@ -1,4 +1,7 @@
 pipeline{
+  agent {
+    label "docker-agent"
+  }
   
   environment{
     registry= "trailfire/dockertest"
