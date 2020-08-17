@@ -20,7 +20,10 @@ echo'Hi'
 }
   stage('Docker'){
     steps{
+      script
+      {
       docker.build registry + "spring" + "$BUILD_NUMBER" 
+      }
     }
     
   }
